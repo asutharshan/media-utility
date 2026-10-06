@@ -1,20 +1,27 @@
-# Installation Guide
+# Installation
 
-Recommended: Windows 10/11, Python 3.10+, pip, Tkinter/tcl-tk and Python Launcher.
+Recommended:
 
-During Python setup, enable **pip**, **tcl/tk and IDLE**, **Python Launcher** and **Add Python to PATH**.
+- Windows 10/11
+- Python 3.10+
+- pip
+- Tkinter / tcl-tk
 
-Then run:
+Run:
 
 ```text
 INSTALL_AND_RUN.bat
 ```
 
-Manual installation:
+If Python is incomplete, repair/reinstall the normal Windows Python distribution and include:
+
+- pip
+- tcl/tk and IDLE
+- Python Launcher
+- Add Python to PATH
+
+For a standalone EXE build:
 
 ```text
-python -m pip install -r requirements.txt
-python media_utility.py
+BUILD_EXE.bat
 ```
-
-To build an EXE, run `BUILD_EXE.bat`.

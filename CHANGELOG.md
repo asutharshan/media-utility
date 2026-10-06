@@ -1,29 +1,50 @@
 # Changelog
 
+## [2.0.1] - 2026-10-06
+
+### Changed
+
+- Replaced MIT licensing with the **Media Utility Personal & Non-Commercial License**
+- Clarified business/internal-use rules
+- Clarified distinction between software commercial use and third-party media rights
+- Replaced "personal experiment use only" wording with **Authorised Use Notice**
+- Updated README, Disclaimer, Notice, Security and contribution guidance
+- Clarified that commercial redistribution, paid-service use and OEM use require written permission
+
 ## [2.0.0] - 2026-10-06
 
 ### Added
+
 - Renamed application to **Media Utility**
 - YouTube channel/library scanning
-- Playlist/library preview and per-item selection
-- Persistent duplicate detection and download history
+- Playlist/library preview
+- Per-item selection
+- Persistent duplicate detection
+- Download history
 - MP3 quality selector
 - MP4 resolution selector
-- Thumbnail and metadata embedding options
+- Thumbnail embedding
+- Metadata embedding
 - Browser-cookie selection
-- Queue pause/resume and stop-after-current controls
-- Detailed per-file logging and live percentage
+- Queue controls
+- Detailed progress logging
 - Standalone EXE build script
-- Public GitHub repository documentation
 
 ## [1.1.0] - 2026-10-06
-- Added pip detection and `ensurepip` bootstrap attempt
-- Added clearer Python/Tkinter installation diagnostics
+
+### Fixed
+
+- pip detection
+- `ensurepip` bootstrap attempt
+- clearer Python/Tkinter diagnostics
 
 ## [1.0.0] - 2026-10-06
-- Initial graphical downloader
-- Multiple URL input
+
+### Added
+
+- Initial GUI
+- multiple URL input
 - MP3/MP4 output
-- destination-folder selection
+- destination folder selection
 - source recognition
-- dependency installer BAT
+- dependency installation BAT

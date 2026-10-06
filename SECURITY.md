@@ -4,27 +4,50 @@
 
 | Version | Supported |
 |---|---|
-| 2.x | Yes |
+| 2.0.1 | Yes |
+| 2.0.0 | Best effort |
 | 1.x | Best effort only |
 
-## Reporting a vulnerability
+## Sensitive information
 
-Do **not** publish secrets or sensitive information in a public GitHub issue. This includes browser cookies, authentication tokens, API keys, passwords, private media URLs, private account identifiers, personal information, or sensitive local paths.
+Do not publish:
 
-For reproducible non-sensitive reports, include the Media Utility version, Windows version, Python version, steps to reproduce, expected behaviour, observed behaviour and redacted logs.
-
-For sensitive reports, use a private security reporting mechanism if one is enabled for the repository.
+- cookies;
+- passwords;
+- authentication tokens;
+- API keys;
+- private media URLs;
+- customer information;
+- personally identifiable information;
+- secrets contained in logs.
 
 ## Browser cookies
 
-Browser-cookie access should remain opt-in. The project should never intentionally upload cookies to a project-controlled server or write raw cookies/tokens to logs.
+Media Utility should never intentionally:
+
+- upload browser cookies to a project-controlled server;
+- write raw cookies to application logs;
+- display authentication tokens in the UI;
+- include credentials in crash reports.
+
+## Reporting vulnerabilities
+
+Use GitHub private security reporting where available.
+
+If public reporting is unavoidable, redact all sensitive information.
+
+A useful report should include:
+
+- Media Utility version;
+- Windows version;
+- Python version;
+- steps to reproduce;
+- expected behaviour;
+- actual behaviour;
+- redacted logs.
 
 ## Dependency security
 
-Keep dependencies current:
+Keep dependencies current and review them before releases.
 
-```text
-python -m pip install --upgrade yt-dlp imageio-ffmpeg
-```
-
-Downloaded media should be treated as untrusted content and should never be executed automatically.
+Downloaded media should be treated as untrusted content and should never be automatically executed.

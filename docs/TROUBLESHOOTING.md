@@ -1,21 +1,50 @@
 # Troubleshooting
 
-## `No module named pip`
-Repair/reinstall Python and enable pip, tcl/tk and IDLE, and Python Launcher.
+## No module named pip
 
-## `ensurepip` is unavailable
-You may be using an embedded/minimal Python distribution. Install the normal Windows Python distribution.
+Repair or reinstall a full Python distribution and enable pip.
 
-## Tkinter is missing
-Repair Python and enable `tcl/tk and IDLE`.
+## `ensurepip` unavailable
+
+You are probably using a minimal or embedded Python distribution.
+
+## Tkinter missing
+
+Enable `tcl/tk and IDLE` in the Python installer.
 
 ## Browser cookies fail
-Possible causes include a locked browser database, cookie encryption incompatibility, expired session, or site changes. Try closing the browser. Never export or post cookies publicly.
+
+Possible reasons:
+
+- browser database is locked;
+- session expired;
+- cookie encryption is unsupported;
+- source site changed authentication behaviour.
+
+Never export or publish cookies.
 
 ## Channel/library scan is slow
-Very large channels may contain hundreds or thousands of items and can be rate-limited. Test with a small playlist first.
 
-## A website suddenly stops working
+Large channels can contain hundreds or thousands of items and may be rate-limited.
+
+## Duplicate warning
+
+Persistent history is stored under:
+
+```text
+%APPDATA%\MediaUtility\download_history.json
+```
+
+Use:
+
+```text
+History → Reset Duplicate History
+```
+
+to clear it.
+
+## Source website stops working
+
 Update `yt-dlp`:
 
 ```text

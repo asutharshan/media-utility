@@ -1,22 +1,57 @@
 # Contributing to Media Utility
 
-Contributions are welcome for UI improvements, accessibility, error handling, progress reporting, queue management, duplicate detection, tests, documentation, logging, performance, packaging and lawful media-library workflows.
+Contributions are welcome for lawful and authorised use cases.
 
-## Not accepted
+Good contribution areas include:
 
-Please do not submit functionality intended to bypass DRM, steal sessions, evade paid access, defeat account controls, obtain another person's private content, circumvent technical protection measures, or automate abusive scraping.
+- UI improvements;
+- accessibility;
+- performance;
+- logging;
+- queue management;
+- duplicate detection;
+- testing;
+- packaging;
+- documentation;
+- lawful media-library workflows.
 
-## Development setup
+Do not submit functionality intended to:
+
+- bypass DRM;
+- steal sessions;
+- bypass paid access;
+- obtain unauthorised private content;
+- defeat authentication;
+- evade technical protection measures;
+- facilitate copyright infringement.
+
+## Development
+
+Install dependencies:
 
 ```text
 python -m pip install -r requirements.txt
+```
+
+Run:
+
+```text
 python media_utility.py
 ```
 
 ## Pull requests
 
-Keep changes focused, explain the purpose, describe testing, do not commit cookies/media/personal data, update documentation where behaviour changes, and update `CHANGELOG.md` for user-visible changes.
+Please:
 
-## Testing
+1. keep changes focused;
+2. explain what changed;
+3. describe how it was tested;
+4. avoid committing secrets or private data;
+5. update documentation where behaviour changes;
+6. update `CHANGELOG.md` for user-visible changes.
 
-Before submitting, test UI launch, single-media scan/download, playlist/library scan, MP3, MP4, duplicate detection, history reset and queue controls where relevant. Confirm logs do not expose credentials or private data.
+## Licence
+
+By contributing, you agree that your contribution may be distributed under the project's current licence.
+
+Do not contribute code you do not have the right to submit.

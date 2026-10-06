@@ -1,7 +1,14 @@
 # Code of Conduct
 
-Participants are expected to communicate respectfully and constructively. Positive behaviour includes actionable technical feedback, reasonable disagreement, privacy awareness and criticism focused on code rather than people.
+Participants are expected to communicate respectfully and protect user privacy.
 
-Unacceptable behaviour includes harassment, threats, discriminatory language, publishing private information, deliberately sharing credentials/authentication material, or encouraging unlawful access to private systems or content.
+Unacceptable behaviour includes:
 
-Repository maintainers may edit, hide, lock or remove contributions that violate these expectations. Serious or repeated abuse may result in being blocked from participation.
+- harassment;
+- discriminatory abuse;
+- threats;
+- publishing another person's private information;
+- publishing credentials, cookies or authentication tokens;
+- encouraging unauthorised access to private systems or content.
+
+Maintainers may remove or restrict contributions that violate these expectations.

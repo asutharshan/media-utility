@@ -1,41 +1,79 @@
 # Disclaimer
 
-**Media Utility v2.0**  
+**Media Utility v2.0.1**  
 Author: **Arun Sutharshan**  
 Date: **06 October 2026**
 
-Media Utility was created as a personal experiment and educational utility.
+## Authorised use only
 
-## User responsibility
+Media Utility is intended for lawful, authorised media access and management.
 
-You are solely responsible for determining whether you are legally and contractually permitted to access, scan, download, convert, retain, redistribute or otherwise use media obtained through this software.
+Use it only with content that:
 
-Use it only with content that you own, created, is licensed for your intended use, is public domain, or you are otherwise authorised to access and download.
+- you own;
+- you created;
+- is licensed for your intended use;
+- is public-domain material;
+- or you are otherwise expressly authorised to access and download.
 
-## No rights granted
+The availability of a technical download function does not mean that downloading or reusing a particular item is legally or contractually permitted.
 
-Media Utility does not grant rights to copyrighted material. Technical availability of a download function does not mean a particular download is legally or contractually permitted.
+## Third-party content
 
-## Website terms
+Media Utility does not grant rights to third-party content.
 
-Use may be subject to the terms, acceptable-use rules and account conditions of the relevant website. You are responsible for reviewing and complying with them.
+Users remain solely responsible for determining whether they are permitted to:
+
+- access;
+- download;
+- copy;
+- convert;
+- archive;
+- republish;
+- redistribute;
+- or commercially exploit
+
+any media processed through the application.
+
+## Platform terms
+
+Users are responsible for complying with the terms, account rules, licence conditions and acceptable-use requirements of the relevant source platform.
 
 ## Browser cookies
 
-Browser-cookie functionality is provided only to support legitimate access to content that the user is already authorised to access. Media Utility is not intended to steal sessions, obtain another person's credentials, bypass authentication, defeat DRM, circumvent paid access, or bypass technical protection measures.
+Browser-cookie support is provided only to facilitate legitimate access to material the user is already authorised to access.
 
-Never share cookies, authentication tokens or credentials in GitHub issues.
+It must not be used to:
+
+- steal sessions;
+- access another person's account;
+- defeat paid access;
+- bypass authentication;
+- bypass DRM;
+- circumvent technical protection measures.
+
+## Commercial use
+
+Media Utility itself is not licensed for unrestricted commercial redistribution or paid-service use.
+
+Limited internal organisational use with content that the organisation owns or is properly licensed to use is permitted under the project licence.
+
+For broader commercial use, obtain written permission from the copyright holder.
 
 ## No warranty
 
-The software is provided **"as is"** and **"as available"**, without warranty of any kind, including availability, compatibility, accuracy, fitness for purpose, uninterrupted operation, data preservation, account consequences, file quality or third-party service behaviour.
+The software is provided **"as is"** and **"as available"**, without warranty of any kind.
+
+No warranty is made regarding compatibility, availability, accuracy, file integrity, service behaviour, account consequences, or fitness for a particular purpose.
 
 ## No liability
 
-To the maximum extent permitted by applicable law, the author accepts no liability for any loss, damage, claim, suspension, restriction, copyright issue, contractual dispute, account issue, data loss, corrupted media or other consequence arising from use or misuse of the software.
+To the maximum extent permitted by law, the author accepts no liability for loss, damage, account suspension, copyright claims, contractual disputes, service restrictions, corrupted files, data loss, lost profits, or other consequences arising from the use or misuse of Media Utility.
 
-This disclaimer does not exclude liability where exclusion is prohibited by applicable law.
+Nothing in this disclaimer excludes liability where exclusion is prohibited by applicable law.
 
-## Third-party software
+## Third-party components
 
-Media Utility relies on third-party components including `yt-dlp` and FFmpeg-related tooling. Those projects are governed by their own licences, terms and security considerations.
+Media Utility relies on third-party libraries and tools, including `yt-dlp` and FFmpeg-related tooling.
+
+Those components remain subject to their respective licences.

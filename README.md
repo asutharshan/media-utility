@@ -1,69 +1,109 @@
 # Media Utility
 
-A Windows desktop utility for scanning supported media links, loading channel/playlist libraries, selecting individual items, and downloading authorised media in MP3 and/or MP4 formats.
+A Windows desktop utility for scanning supported media links, loading channel or playlist libraries, selecting individual items, and downloading authorised media in MP3 and/or MP4 formats.
 
-**Version:** 2.0  
+**Version:** 2.0.1  
 **Author:** Arun Sutharshan  
 **Date:** 06 October 2026  
-**Status:** Personal experiment / educational utility
+**Licence:** Media Utility Personal & Non-Commercial License
 
-> **Important:** Use Media Utility only for media that you own, created, or are authorised to download. This project does not grant rights to content, bypass DRM, or override website terms, copyright, authentication requirements, or access controls.
+> **Authorised Use Notice:** Use Media Utility only with content you own, created, are licensed to use, or are otherwise authorised to access and download. The software does not grant rights to third-party content and does not bypass DRM or technical access controls.
+
+## Intended use
+
+Media Utility is primarily intended for:
+
+- personal use;
+- educational use;
+- non-commercial research and experimentation;
+- internal evaluation;
+- archiving or managing your own content;
+- business use where the organisation owns or is properly licensed to use the content.
+
+Commercial redistribution, paid-service use, OEM bundling, or commercial exploitation of the software itself requires written permission from the copyright holder.
 
 ## Features
 
 - Colourful Windows desktop interface
 - Multiple URL input
-- Automatic source detection for supported URLs
-- YouTube individual video, playlist and channel/library support
+- Automatic source detection
+- YouTube single-video support
+- YouTube playlist support
+- YouTube channel/library scanning
 - Library preview before download
-- Select all / select none / invert selection / individual selection
-- MP3 and MP4 multi-select output
-- MP3 quality selector: 128–320 kbps
-- MP4 maximum resolution selector: Best, 2160p, 1440p, 1080p, 720p, 480p, 360p
-- Optional thumbnail and metadata embedding
+- Select all / select none / invert selection
+- Individual item selection
+- MP3 and MP4 multi-select
+- Selectable MP3 quality
+- Selectable MP4 maximum resolution
+- Optional thumbnail embedding
+- Optional metadata embedding
 - Browser-cookie support for legitimate authenticated access
-- Persistent duplicate detection and download history
+- Persistent duplicate detection
+- Download history
 - Queue pause/resume/stop controls
-- Per-file percentage, transfer speed and ETA where available
-- Windows `.exe` build script
+- Per-file detail logging
+- Live percentage progress
+- Transfer speed and ETA where available
+- Windows EXE build support
 
-## Supported sources
+## Channel / library workflow
 
-Media Utility uses `yt-dlp` as its media extraction engine. Common examples include YouTube, Facebook and TikTok. Other sites may work when supported by the installed `yt-dlp` version.
+1. Paste a supported channel, playlist, or media URL.
+2. Choose **Scan / Load Library**.
+3. Media Utility retrieves the item list without downloading the media itself.
+4. Review the library.
+5. Select all, none, invert, or choose individual items.
+6. Choose MP3, MP4, or both.
+7. Choose output quality/resolution.
+8. Download only the selected items.
 
-Website compatibility can change without notice because sites frequently change interfaces, authentication mechanisms, delivery formats and anti-automation measures.
-
-## Channel / playlist workflow
-
-1. Paste a supported channel, playlist or media URL.
-2. Select **Scan / Load Library**.
-3. Media Utility retrieves the available item list without downloading the media files.
-4. Select all, none, invert, or individual items.
-5. Choose MP3, MP4, or both.
-6. Choose quality/resolution.
-7. Select **Download Selected**.
-
-Very large libraries can take time to enumerate and may be subject to website rate limits.
+Very large libraries may take time to enumerate and may be subject to source-site rate limits or authentication requirements.
 
 ## Duplicate detection
 
-Media Utility keeps a persistent local download history at:
+Completed items are stored locally under:
 
 ```text
 %APPDATA%\MediaUtility\download_history.json
 ```
 
-Duplicate detection is primarily based on source/extractor + media ID + requested format. MP3 and MP4 are tracked separately. Closing and reopening the app does not reset this history. Use **History → Reset Duplicate History** to clear it. Resetting history does not delete downloaded media files.
+Duplicate detection is based primarily on the source/extractor, media ID, and requested format.
+
+MP3 and MP4 are tracked separately.
+
+Duplicate history remains across application restarts until the user explicitly chooses:
+
+```text
+History → Reset Duplicate History
+```
+
+Resetting the history does not delete downloaded media files.
 
 ## Browser cookies
 
-Browser-cookie functionality is intended only for content that the logged-in user is already legitimately authorised to access. It is not intended to steal sessions, bypass authentication, defeat DRM, or circumvent paid access.
+Browser-cookie integration is intended only for content that the logged-in user is already authorised to access.
 
-Do not post cookies, tokens, credentials or private URLs in public GitHub issues.
+Supported browser selections may include Chrome, Edge, Firefox, Brave, Opera and Vivaldi.
+
+Media Utility is not intended to:
+
+- bypass authentication;
+- defeat paid access;
+- steal sessions;
+- obtain another person's private content;
+- bypass DRM or technical protection measures.
+
+Never publish cookies, tokens or private authentication information in GitHub issues.
 
 ## Installation
 
-Recommended: Windows 10/11, Python 3.10+, pip and Tkinter.
+Recommended environment:
+
+- Windows 10 or Windows 11
+- Python 3.10+
+- pip
+- Tkinter / tcl-tk
 
 Run:
 
@@ -71,7 +111,7 @@ Run:
 INSTALL_AND_RUN.bat
 ```
 
-## Build the standalone Windows EXE
+## Build a standalone Windows EXE
 
 Run:
 
@@ -79,54 +119,54 @@ Run:
 BUILD_EXE.bat
 ```
 
-The output should appear under:
+The build output is typically:
 
 ```text
 dist\MediaUtility.exe
 ```
 
-## Repository structure
-
-```text
-MediaUtility/
-├─ media_utility.py
-├─ INSTALL_AND_RUN.bat
-├─ BUILD_EXE.bat
-├─ requirements.txt
-├─ README.md
-├─ LICENSE
-├─ DISCLAIMER.md
-├─ NOTICE.md
-├─ SECURITY.md
-├─ CONTRIBUTING.md
-├─ CHANGELOG.md
-├─ CODE_OF_CONDUCT.md
-├─ RELEASE_CHECKLIST.md
-├─ .gitignore
-├─ docs/
-│  ├─ INSTALLATION.md
-│  └─ TROUBLESHOOTING.md
-├─ screenshots/
-│  └─ README.md
-└─ .github/
-   ├─ ISSUE_TEMPLATE/
-   │  ├─ bug_report.md
-   │  └─ feature_request.md
-   └─ pull_request_template.md
-```
+Build and test Windows executables on Windows.
 
 ## Privacy
 
-Media Utility does not intentionally upload download history, local file paths, cookies, URLs or settings to a project-controlled server. URLs are, of course, sent to the relevant source website during scanning/downloading.
+Media Utility does not intentionally upload download history, local settings, cookies or local file paths to a project-controlled server.
 
-## Legal / acceptable use
+When browser-cookie support is enabled, cookies are passed locally to the extraction engine for legitimate authentication against the relevant source.
 
-Use this software only where you have permission. You are responsible for complying with copyright law, local law, contractual restrictions, website terms, account conditions and licensing requirements. See [DISCLAIMER.md](DISCLAIMER.md) and [NOTICE.md](NOTICE.md).
+Do not post logs containing private URLs, account identifiers, cookies, tokens, customer information or local secrets.
 
-## License
+## Commercial use
 
-Released under the MIT License. See [LICENSE](LICENSE).
+The software is **not generally licensed for commercial redistribution or paid-service use**.
+
+However, an organisation may use it internally to manage content that it owns or is properly licensed to use, subject to the licence terms and relevant platform rules.
+
+For broader commercial use, obtain written permission from the copyright holder.
+
+See [LICENSE](LICENSE).
+
+## Third-party platforms
+
+Media Utility is an independent project and is not affiliated with, endorsed by, sponsored by, or officially connected to YouTube, Google, Meta, Facebook, TikTok, ByteDance or any other supported platform.
+
+## Third-party dependencies
+
+Media Utility relies on third-party libraries and tooling, including `yt-dlp` and FFmpeg-related components.
+
+Those dependencies retain their own licences and terms.
+
+## Security
+
+See [SECURITY.md](SECURITY.md).
 
 ## Disclaimer
 
-This software is provided **"as is"**, without warranty of any kind. Created by **Arun Sutharshan** for personal experiment and educational purposes. See [DISCLAIMER.md](DISCLAIMER.md).
+See [DISCLAIMER.md](DISCLAIMER.md).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
