@@ -1,109 +1,110 @@
-# Media Utility
+# Media Utility v2.1.1
 
-A Windows desktop utility for scanning supported media links, loading channel or playlist libraries, selecting individual items, and downloading authorised media in MP3 and/or MP4 formats.
+Windows desktop utility for scanning supported media URLs, loading channel/playlist libraries, selecting individual items, and exporting authorised media to MP3 and/or MP4.
 
-**Version:** 2.0.1  
 **Author:** Arun Sutharshan  
+**Version:** 2.1.1  
 **Date:** 06 October 2026  
 **Licence:** Media Utility Personal & Non-Commercial License
 
-> **Authorised Use Notice:** Use Media Utility only with content you own, created, are licensed to use, or are otherwise authorised to access and download. The software does not grant rights to third-party content and does not bypass DRM or technical access controls.
+> **Authorised Use Notice:** Use only with media you own, created, are licensed to use, or are otherwise authorised to access and download. Media Utility does not grant rights to third-party content and does not bypass DRM or technical access controls.
 
-## Intended use
+## What's new in v2.1
 
-Media Utility is primarily intended for:
+v2.1 addresses newer YouTube extraction requirements.
 
-- personal use;
-- educational use;
-- non-commercial research and experimentation;
-- internal evaluation;
-- archiving or managing your own content;
-- business use where the organisation owns or is properly licensed to use the content.
+### YouTube JavaScript challenge support
 
-Commercial redistribution, paid-service use, OEM bundling, or commercial exploitation of the software itself requires written permission from the copyright holder.
+Modern `yt-dlp` YouTube extraction can require an external JavaScript runtime.
 
-## Features
+Media Utility v2.1:
 
-- Colourful Windows desktop interface
-- Multiple URL input
-- Automatic source detection
-- YouTube single-video support
-- YouTube playlist support
-- YouTube channel/library scanning
-- Library preview before download
-- Select all / select none / invert selection
-- Individual item selection
-- MP3 and MP4 multi-select
-- Selectable MP3 quality
-- Selectable MP4 maximum resolution
-- Optional thumbnail embedding
-- Optional metadata embedding
-- Browser-cookie support for legitimate authenticated access
-- Persistent duplicate detection
-- Download history
-- Queue pause/resume/stop controls
-- Per-file detail logging
-- Live percentage progress
-- Transfer speed and ETA where available
-- Windows EXE build support
+- installs/updates `yt-dlp[default]`, which includes the compatible `yt-dlp-ejs` package;
+- checks for the recommended **Deno** runtime;
+- attempts to install Deno automatically on Windows when it is missing;
+- detects Deno when installed through PATH, WinGet, or the standard `%USERPROFILE%\.deno\bin` location;
+- passes the Deno path directly to the `yt-dlp` Python API;
+- displays runtime status in the GUI.
 
-## Channel / library workflow
+The yt-dlp project currently recommends Deno 2.3+ for YouTube JavaScript challenge solving.
 
-1. Paste a supported channel, playlist, or media URL.
-2. Choose **Scan / Load Library**.
-3. Media Utility retrieves the item list without downloading the media itself.
-4. Review the library.
-5. Select all, none, invert, or choose individual items.
-6. Choose MP3, MP4, or both.
-7. Choose output quality/resolution.
-8. Download only the selected items.
+### YouTube authentication / anti-bot handling
 
-Very large libraries may take time to enumerate and may be subject to source-site rate limits or authentication requirements.
+The UI now has:
+
+- browser-cookie selector;
+- **Test YouTube Auth** button;
+- authentication status;
+- clearer handling of the YouTube message:
+  `Sign in to confirm you're not a bot`;
+- guidance to choose the browser where the user is already legitimately signed into YouTube.
+
+Media Utility never intentionally writes raw cookies or authentication tokens into its activity log.
+
+### Detailed percentage logging
+
+In addition to the progress bar, the activity log records progress at approximately 5% intervals:
+
+```text
+PROGRESS | MP4 | 35.0% | Speed=... | ETA=... | ID=... | title
+```
+
+Each queued job logs:
+
+- source;
+- media ID;
+- title;
+- duration;
+- URL;
+- output format;
+- live percentage;
+- speed;
+- ETA;
+- completion/failure/authentication status.
+
+## Existing v2 features
+
+- multiple URLs;
+- YouTube video/playlist/channel scanning;
+- selectable library table;
+- MP3 and MP4 multi-select;
+- MP3 quality selection;
+- MP4 maximum-resolution selection;
+- thumbnails and metadata;
+- persistent duplicate detection;
+- history reset;
+- queue pause/resume;
+- stop-after-current-file;
+- browser-cookie access for legitimate authenticated content;
+- Windows EXE build script.
+
+## Channel/library workflow
+
+Paste a YouTube channel, playlist, or supported collection URL and choose:
+
+```text
+Scan / Load Library
+```
+
+Media Utility enumerates the library without downloading the media and allows individual selection before downloading.
 
 ## Duplicate detection
 
-Completed items are stored locally under:
+History is stored locally under:
 
 ```text
 %APPDATA%\MediaUtility\download_history.json
 ```
 
-Duplicate detection is based primarily on the source/extractor, media ID, and requested format.
+Duplicate keys primarily use source/extractor + media ID + requested output format.
 
-MP3 and MP4 are tracked separately.
-
-Duplicate history remains across application restarts until the user explicitly chooses:
+History persists until:
 
 ```text
 History → Reset Duplicate History
 ```
 
-Resetting the history does not delete downloaded media files.
-
-## Browser cookies
-
-Browser-cookie integration is intended only for content that the logged-in user is already authorised to access.
-
-Supported browser selections may include Chrome, Edge, Firefox, Brave, Opera and Vivaldi.
-
-Media Utility is not intended to:
-
-- bypass authentication;
-- defeat paid access;
-- steal sessions;
-- obtain another person's private content;
-- bypass DRM or technical protection measures.
-
-Never publish cookies, tokens or private authentication information in GitHub issues.
-
 ## Installation
-
-Recommended environment:
-
-- Windows 10 or Windows 11
-- Python 3.10+
-- pip
-- Tkinter / tcl-tk
 
 Run:
 
@@ -111,7 +112,34 @@ Run:
 INSTALL_AND_RUN.bat
 ```
 
-## Build a standalone Windows EXE
+The installer:
+
+1. verifies Python/pip;
+2. updates pip;
+3. installs/updates `yt-dlp[default]` and `imageio-ffmpeg`;
+4. checks for Deno;
+5. attempts to install Deno when missing;
+6. checks Tkinter;
+7. starts Media Utility.
+
+A normal Python installation containing pip and Tkinter is required.
+
+## Browser cookies
+
+Select the browser where you are already signed into the relevant service:
+
+- Chrome
+- Edge
+- Firefox
+- Brave
+- Opera
+- Vivaldi
+
+Then use **Test YouTube Auth** or retry the library scan.
+
+Browser-cookie access is provided only for content the user is already authorised to access.
+
+## Standalone EXE
 
 Run:
 
@@ -119,54 +147,46 @@ Run:
 BUILD_EXE.bat
 ```
 
-The build output is typically:
+This builds:
 
 ```text
 dist\MediaUtility.exe
 ```
 
-Build and test Windows executables on Windows.
+Deno remains an external runtime and should also be installed on the destination Windows machine for reliable modern YouTube extraction.
 
-## Privacy
+## Public GitHub repository
 
-Media Utility does not intentionally upload download history, local settings, cookies or local file paths to a project-controlled server.
+This package includes:
 
-When browser-cookie support is enabled, cookies are passed locally to the extraction engine for legitimate authentication against the relevant source.
+- `LICENSE`
+- `DISCLAIMER.md`
+- `NOTICE.md`
+- `SECURITY.md`
+- `CONTRIBUTING.md`
+- `CODE_OF_CONDUCT.md`
+- `CHANGELOG.md`
+- `.gitignore`
+- GitHub issue templates
+- pull request template
+- installation/troubleshooting documentation
 
-Do not post logs containing private URLs, account identifiers, cookies, tokens, customer information or local secrets.
+## Commercial/licensing position
 
-## Commercial use
+Media Utility is source-available under the **Media Utility Personal & Non-Commercial License**.
 
-The software is **not generally licensed for commercial redistribution or paid-service use**.
+Limited internal organisational use with content owned or properly licensed by that organisation is permitted under the licence. Commercial redistribution, paid-service use, OEM integration, or commercial exploitation of the software itself requires written permission from the copyright holder.
 
-However, an organisation may use it internally to manage content that it owns or is properly licensed to use, subject to the licence terms and relevant platform rules.
+See `LICENSE` for the controlling terms.
 
-For broader commercial use, obtain written permission from the copyright holder.
 
-See [LICENSE](LICENSE).
+## v2.1.1 UI maintenance
 
-## Third-party platforms
-
-Media Utility is an independent project and is not affiliated with, endorsed by, sponsored by, or officially connected to YouTube, Google, Meta, Facebook, TikTok, ByteDance or any other supported platform.
-
-## Third-party dependencies
-
-Media Utility relies on third-party libraries and tooling, including `yt-dlp` and FFmpeg-related components.
-
-Those dependencies retain their own licences and terms.
-
-## Security
-
-See [SECURITY.md](SECURITY.md).
-
-## Disclaimer
-
-See [DISCLAIMER.md](DISCLAIMER.md).
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md).
+- Test YouTube Auth remains permanently visible after failed or successful tests.
+- Authentication status is kept short; detailed errors remain in the dialog and activity log.
+- Changing the cookie browser immediately refreshes the displayed browser/runtime state.
+- URL input now has vertical and horizontal scrollbars.
+- Channel/library results now have vertical and horizontal scrollbars.
+- Activity log now also has scrollbars.
+- Download Selected / Execute is positioned above the library table so it remains visible on smaller displays.
+- Reduced minimum window size and compacted the footer/log area.

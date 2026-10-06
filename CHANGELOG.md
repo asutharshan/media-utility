@@ -1,50 +1,58 @@
 # Changelog
 
-## [2.0.1] - 2026-10-06
+## [2.1.1] - 2026-10-06
+
+### Fixed
+- YouTube authentication test button remains visible after unsuccessful tests
+- long authentication messages no longer push action buttons off screen
+- cookie-browser status updates immediately when browser selection changes
+- added URL-list vertical/horizontal scrollbars
+- added library-table vertical/horizontal scrollbars
+- added activity-log scrollbars
+- moved Download Selected / Execute toolbar above library list for small-screen visibility
+- reduced minimum UI dimensions and compacted lower status/log area
+
+## [2.1.0] - 2026-10-06
+
+### Added
+
+- Deno JavaScript runtime detection
+- automatic Windows Deno installation attempt
+- `yt-dlp[default]` installation including compatible EJS scripts
+- Deno path passed directly to yt-dlp Python API
+- runtime status line in GUI
+- `Test YouTube Auth` function
+- clearer YouTube anti-bot/sign-in handling
+- authentication status indicator
+- progress logging at approximately 5% intervals
+- explicit per-file percentage/speed/ETA log entries
 
 ### Changed
 
-- Replaced MIT licensing with the **Media Utility Personal & Non-Commercial License**
-- Clarified business/internal-use rules
-- Clarified distinction between software commercial use and third-party media rights
-- Replaced "personal experiment use only" wording with **Authorised Use Notice**
-- Updated README, Disclaimer, Notice, Security and contribution guidance
-- Clarified that commercial redistribution, paid-service use and OEM use require written permission
+- application banner now uses `Authorised Use Notice`
+- updated installer for current YouTube/yt-dlp requirements
+- updated EXE build configuration
+
+## [2.0.1] - 2026-10-06
+
+- Introduced Media Utility Personal & Non-Commercial License
+- clarified authorised/internal organisational use
+- updated public GitHub legal/support documentation
 
 ## [2.0.0] - 2026-10-06
 
-### Added
-
-- Renamed application to **Media Utility**
-- YouTube channel/library scanning
-- Playlist/library preview
-- Per-item selection
-- Persistent duplicate detection
-- Download history
-- MP3 quality selector
-- MP4 resolution selector
-- Thumbnail embedding
-- Metadata embedding
-- Browser-cookie selection
-- Queue controls
-- Detailed progress logging
-- Standalone EXE build script
+- channel/library scanning
+- selectable item table
+- persistent duplicates/history
+- selectable MP3/MP4 quality
+- metadata/thumbnails
+- browser cookies
+- queue controls
 
 ## [1.1.0] - 2026-10-06
 
-### Fixed
-
-- pip detection
-- `ensurepip` bootstrap attempt
-- clearer Python/Tkinter diagnostics
+- improved pip/Tkinter bootstrap diagnostics
 
 ## [1.0.0] - 2026-10-06
 
-### Added
-
-- Initial GUI
-- multiple URL input
-- MP3/MP4 output
-- destination folder selection
-- source recognition
-- dependency installation BAT
+- initial Media Downloader prototype
